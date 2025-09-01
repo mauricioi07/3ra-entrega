@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <nav>
+        <a href={% url "home" %}>Home</a>
+        <a href={% url "crear_cliente" %}>Crear Cliente</a>
+        <a href={% url "listado_clientes" %}>Clientes</a>
+    </nav>
+
+    <h1>Listado Clientes</h1>
+
+    <ul>
+    {% for cliente in listado_clientes %}
+    <li>
+    {{cliente}}
+    </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
