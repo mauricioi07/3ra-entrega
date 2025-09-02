@@ -13,9 +13,8 @@ def crear_cliente(request):
     #cliente = Cliente(nombre=nombre,apellido=apellido,email=email)
     #cliente.save()
 
-    #request.POST()
     if request.method == "POST":
-        formulario = FormularioCreacionCliente()
+        formulario = FormularioCreacionCliente(request.POST)
         if formulario.is_valid():
             nuevo_nombre=formulario.cleaned_data.get("nombre")
             nuevo_apellido=formulario.cleaned_data.get("apellido")
@@ -24,7 +23,7 @@ def crear_cliente(request):
             cliente=Cliente(nombre=nuevo_nombre, apellido=nuevo_apellido, email=nuevo_email)
             cliente.save()
 
-            return redirect("listado_autos")
+            return redirect("listado_clientes")
     else:
         formulario = FormularioCreacionCliente()
 

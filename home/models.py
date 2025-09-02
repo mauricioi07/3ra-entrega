@@ -5,8 +5,8 @@ class Cliente(models.Model):
     apellido = models.CharField(max_length=30)
     email= models.CharField(max_length=50)
 
-    #def __str__(self):
-    def __repr__(self):
+    #def __repr__(self):
+    def __str__(self):
         return f"{self.nombre} {self.apellido} {self.email}"
     
 
